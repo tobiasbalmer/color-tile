@@ -1,0 +1,53 @@
+:host {
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.color {
+    position: relative;
+    padding: 30px 5px 25px;
+    text-align: center;
+}
+
+.color__text {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    color: #5a585a;
+    cursor: pointer;
+}
+
+.color__text:not(:first-child) {
+    margin-left: 5px;
+}
+
+.color__text--copied {
+    animation-name: copy;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+}
+
+.color__content {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 80%;
+    opacity: 0.5;
+    color: #000;
+}
+
+@keyframes copy {
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.1)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
