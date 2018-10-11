@@ -20,7 +20,7 @@ export class colorTile {
     g = parseInt(hex.substring(2,4), 16);
     b = parseInt(hex.substring(4,6), 16);
 
-    result = 'rgb('+r+','+g+','+b+')';
+    result = 'rgb('+r+', '+g+', '+b+')';
     return result;
   }
 
@@ -44,10 +44,10 @@ export class colorTile {
   render() {
     return (
       <div class="color" style={{ backgroundColor: this.tilecolor }}>
-        <p title="copy to clipboard" data-color="hex" class={this.copied === 'hex' ? 'color__text color__text--copied' : 'color__text'} onClick={e => this.copyToClipboard(e)}>
+        <p title="copy to clipboard" data-color="hex" class={'color__text ' + (this.copied === 'hex' ? 'color__text--copied' : '')} onClick={e => this.copyToClipboard(e)}>
           {this.copied === 'hex' ? this.copytext : this.tilecolor }
         </p>
-        <p title="copy to clipboard" data-color="rgb" class={this.copied === 'rgb' ? 'color__text color__text--copied' : 'color__text'} onClick={e => this.copyToClipboard(e)}>
+        <p title="copy to clipboard" data-color="rgb" class={'color__text ' + (this.copied === 'rgb' ? 'color__text--copied' : '')} onClick={e => this.copyToClipboard(e)}>
           {this.copied === 'rgb' ? this.copytext : this.hexToRgb(this.tilecolor) }
         </p>
         <div class="color__content"><slot /></div>
